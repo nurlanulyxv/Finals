@@ -6,18 +6,18 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import numpy as np
 
-st.title('NFL Football Stats (Passing) Explorer')
+st.title('Project by Yerkebulan and Alibek')
 
 st.markdown("""
-This app performs simple webscraping of NFL Football player stats data (focusing on Passing
-""")
+This app performs simple webscraping of NFL Football player stats data (focusing on Rushing)
+NFL Football Stats (Rushing) Explorer '""")
 
 st.sidebar.header('User Input Features')
 selected_year = st.sidebar.selectbox('Year', list(reversed(range(1990,2020))))
 
 @st.cache
 def load_data(year):
-    url = "https://www.pro-football-reference.com/years/" + str(year) + "/passing.htm"
+    url = "https://www.pro-football-reference.com/years/" + str(year) + "/rushing.htm"
     html = pd.read_html(url, header = 1)
     df = html[0]
     raw = df.drop(df[df.Age == 'Age'].index) 
@@ -58,4 +58,3 @@ if st.button('Intercorrelation Heatmap'):
         f, ax = plt.subplots(figsize=(6, 3))
         ax = sns.heatmap(corr, mask=mask, vmax=1, square=True)
     st.pyplot()
-import platform 
