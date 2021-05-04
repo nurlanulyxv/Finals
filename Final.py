@@ -48,3 +48,5 @@ def filedownload(df):
     return href
 
 st.markdown(filedownload(df_selected_team), unsafe_allow_html=True)
+
+#To run code we need a streamlit
