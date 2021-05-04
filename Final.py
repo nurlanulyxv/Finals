@@ -1,12 +1,10 @@
-import numpy 
 import streamlit as st
 import pandas as pd
 import base64
-import matplotlib.pyplot as plt
-import seaborn as sns
-import numpy as np
+
 
 st.title('Project by Yerkebulan and Alibek')
+
 
 st.markdown("""
 This app performs simple webscraping of NFL Football player stats data (focusing on Rushing)
